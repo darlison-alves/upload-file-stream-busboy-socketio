@@ -25,7 +25,7 @@ io.on('connection', (socket) => {
 
 
 const onFile = (fieldname, file, filename, encoding, mimetype) => {
-    const saveTo = path.join('.', filename);
+    const saveTo = path.join('./files_upload', filename);
     log('Uploading: ' + saveTo);
     file.pipe(fs.createWriteStream(saveTo));
     log(`File [${fieldname}]: filename: '${filename}', encoding: ${encoding}, mimetype: ${mimetype}`);
